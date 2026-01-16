@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+
+    --color-primary: #29a829;
+    --color-secondary: #ffc324;
+    --font-sans: 'Public Sans', sans-serif;
+     --font-display: "Inter", "sans-serif";
+}
+
+@layer base{
+    body{
+        overflow-x: hidden;
+     
+    }
+}
+
+.container {
+   @apply max-w-7xl mx-auto px-6 lg:px-8;
+}
