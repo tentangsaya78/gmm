@@ -1,9 +1,9 @@
 <template>
   <div class="pb-20">
     <div class="container">
-      <div class="flex flex-col items-center justify-center gap-6 p-6 text-center">
-        <h4 class="text-3xl lg:text-5xl font-semibold">Cari Cabang & Service Center</h4>
-        <p class="text-2xl">di kota Anda</p>
+      <div class=" text-center">
+
+      <SectionTitle title="Cabang & Service Center" description="Temukan cabang & service center terdekat di kota Anda" />
         <UInputMenu
           v-model="selectedOffice"
           :items="offices"
@@ -35,9 +35,6 @@
         </UInputMenu>
       </div>
 
-      <div class="flex flex-wrap justify-center lg:justify-between items-center gap-6 max-w-screen-lg  mx-auto mt-10">
-       <img v-for="img in logo" :src="img" alt="" class=" h-10 lg:h-12 w-auto">
-     </div>
     </div>
 
     <!-- Modal Overlay -->
@@ -172,10 +169,5 @@ onMounted(() => {
 });
 
 
-  const logo = [
-    '/images/after-sales.png',
-    '/images/turbo.png',
-    '/images/gmm-tele.png',
-    '/images/euro.png'
-  ]
+  
 </script>
