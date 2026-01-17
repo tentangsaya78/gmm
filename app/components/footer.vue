@@ -24,9 +24,15 @@
         <div>
           <h4 class="text-xl font-semibold mb-2">Hubungi Kami</h4>
           <ul class="space-y-2">
-            <li>Alamat: Jl. Soeharto No. 1, RT.01 RW.01, Kec. Soeharto, Kab. Magelang, Jawa Tengah 56111</li>
+            <li>Alamat: Jl. Lingkar Luar Barat No 9, Rawa Buaya, Cengkareng, Jakarta Barat 11740</li>
             <li>Telepon: (0271) 8888888</li>
             <li>Email: info@gmm.co.id</li>
+          </ul>
+          <h4 class="text-xl font-semibold mb-2 mt-5">Service Center</h4>
+          <ul>
+            <li>GMM Teletech : 08123456789</li>
+            <li>GMM Care : 08123456789</li>
+            <li>GMM Part Support : 08123456789</li>
           </ul>
         </div>
         <div>

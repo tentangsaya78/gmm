@@ -1,10 +1,15 @@
 <template>
   <div class="pb-20">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 items-end rounded-xl p-6 bg-primary/10 min-h-[360px]">
-        <div class="lg:col-span-5">
-
-          <h4 class="mb-3">Temukan Cabang & Service Center terdekat di kota Anda</h4>
+      <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 min-h-[360px]">
+        <div
+          class="lg:col-span-4 rounded-xl p-6  h-full flex flex-col justify-end bg-[url(/images/map.jpg)] bg-cover bg-center text-white relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80"></div>
+          <h2 class="text-2xl lg:text-4xl font-semibold mb-3 relative max-w-[500px]">Jaringan layanan kami tersebar di
+            berbagai
+            kota
+            untuk kemudahan Anda</h2>
+          <h4 class="mb-3 relative">Temukan Cabang & Service Center terdekat di kota Anda</h4>
           <UInputMenu v-model="selectedOffice" :items="offices" label-key="city" size="xl" :trailing="false"
             trailing-icon="ic:sharp-search" placeholder="Pilih kota..." class="w-full max-w-[800px] ">
             <template #trailing>
@@ -21,7 +26,7 @@
           </UInputMenu>
         </div>
 
-        <div class="lg:col-span-1">
+        <div class="lg:col-span-2 rounded-xl p-6 bg-primary/10 h-full flex items-center justify-center">
           <UButton icon="i-lucide-phone" size="xl">
             Hubungi Kami
           </UButton>
