@@ -1,7 +1,8 @@
 <template>
   <div>
-  <Navbar />
-    <NuxtPage/>
+    <Navbar />
+    <NuxtPage />
+    <Footer />
   </div>
 </template>
 <script setup lang="ts">

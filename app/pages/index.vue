@@ -1,10 +1,11 @@
 <template>
   <div>
-   <Hero2 />
+    <Hero2 />
     <Products />
-   <Sec3 />
-   <Layanan />
-  <CariCabang />
+    <Sec3 />
+    <Layanan />
+    <CariCabang />
+    <News />
   </div>
 </template>
 
@@ -15,6 +16,4 @@ import Sec3 from '~/components/sec3.vue';
 
 </script>
 
-<style>
-
-</style>
+<style></style>
