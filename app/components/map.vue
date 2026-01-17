@@ -1,14 +1,19 @@
 <template>
-  <div class="container">
+  <div class="container pb-20">
 
-
+    <SectionTitle class="text-center" title="Jaringan Layanan Kami"
+      description="Temukan Cabang & Service Center terdekat di kota Anda" />
     <div id="map-section" class="relative group h-[450px] rounded-xl overflow-hidden">
       <!-- Search Bar Overlay -->
-      <div class="absolute top-4 right-0 z-1000 w-full max-w-sm px-4">
-        <UInputMenu v-model="selectedOffice" :items="offices" label-key="city" placeholder="Cari cabang..." size="lg"
-          class="shadow-2xl w-full" :ui="{
-            base: 'bg-white/90 backdrop-blur-sm border-0 focus:ring-2 focus:ring-primary',
+      <div class="absolute top-4 right-0 z-1000 w-full max-w-sm px-4 ">
+        <UInputMenu v-model="selectedOffice" :items="offices" :trailing="false" label-key="city"
+          placeholder="Cari cabang..." size="lg" class="shadow-2xl w-full" :ui="{
+            base: 'bg-white/90 backdrop-blur-sm border-0 focus:ring-2 focus:ring-primary ml-8',
           }">
+          <template #trailing>
+            <UButton v-if="selectedOffice" icon="i-lucide-x" size="xs" color="neutral" variant="ghost"
+              aria-label="Clear selection" @click.stop="clearValue" />
+          </template>
           <template #item-label="{ item }">
             <div class="flex flex-col">
               <span class="font-medium">{{ item.city }}</span>
@@ -44,7 +49,9 @@
 </template>
 <script lang="ts" setup>
 const { offices, selectedOffice } = useCabang()
-
+const clearValue = () => {
+  selectedOffice.value = null
+}
 const mapRef = ref<any>(null)
 const zoom = ref(5)
 const center = ref<[number, number]>([-2.5, 118])
