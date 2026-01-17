@@ -107,7 +107,7 @@ const stats = [
   },
   {
     label: "Unit Terjual",
-    value: 3400,
+    value: 1400,
     suffix: "<span class='text-6xl text-white/70 font-bold'>+</span> Unit"
   },
 ]
