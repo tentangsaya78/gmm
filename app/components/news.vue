@@ -34,7 +34,7 @@ const news = [
   {
     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: "/images/news.jpg",
+    img: "/images/mining.jpg",
     date: "2, Januari 2026",
     icon: "heroicons:calendar-days"
   },
@@ -48,7 +48,7 @@ const news = [
   {
     title: "Magna aliqua ut enim ad minim veniam quis nostrud",
     description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-    img: "/images/news.jpg",
+    img: "/images/truck.jpg",
     date: "23, November 2025",
     icon: "heroicons:calendar-days"
   }

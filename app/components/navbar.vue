@@ -6,7 +6,7 @@
           <NuxtLink to="/">
             <img src="/images/logo.png" alt="logo" class="h-14 w-full" />
           </NuxtLink>
-          <UNavigationMenu :items="menus" class="hidden lg:block" :ui="{
+          <UNavigationMenu :items="menus" class="hidden lg:block py-2.5" :ui="{
             childLinkDescription: 'text-xs text-muted',
             childLinkIcon: 'w-8 h-8',
           }" />

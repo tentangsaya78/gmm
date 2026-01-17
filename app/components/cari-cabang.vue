@@ -1,7 +1,7 @@
 <template>
   <div class="pb-20">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 items-end rounded-xl p-6 bg-primary/10">
+      <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 items-end rounded-xl p-6 bg-primary/10 min-h-[360px]">
         <div class="lg:col-span-5">
 
           <h4 class="mb-3">Temukan Cabang & Service Center terdekat di kota Anda</h4>
@@ -62,6 +62,7 @@
               </h5>
               <div v-if="selectedOffice.address" class="text-gray-800">
                 <p>{{ selectedOffice.address }}</p>
+                <UButton trailing-icon="mdi:map-marker" class="mt-2" size="xs"> Lihat Peta</UButton>
               </div>
               <div v-else-if="selectedOffice.addresses" class="text-gray-800 space-y-1">
                 <p v-for="(addr, idx) in selectedOffice.addresses" :key="idx">{{ addr }}</p>
