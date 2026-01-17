@@ -27,15 +27,19 @@
         </div>
 
         <div
-          class="lg:col-span-2 rounded-xl p-6 bg-primary/10 h-full flex flex-col items-center justify-center relative overflow-hidden min-h-[200px]">
-          <h4 class="text-xl lg:text-2xl font-semibold mb-3">Untuk informasi lebih lanjut</h4>
-          <UButton icon="i-lucide-phone" size="xl" class="relative z-10 shadow-xl">
-            Hubungi Kami
-          </UButton>
-          <UMarquee class="absolute inset-0 -z-10 opacity-10 rotate-[-15deg] scale-150 pointer-events-none"
-            :duration="500" reverse>
-            <img v-for="n in 8" :key="n" src="/images/pattern.svg" alt="" class="w-[300] h-auto opacity-75 mx-[-40px]">
-          </UMarquee>
+          class="lg:col-span-2 rounded-xl p-6  h-full flex flex-col justify-end relative overflow-hidden min-h-[200px] group">
+          <div class="relative z-10 text-white">
+            <p>Kami siap membantu kebutuhan Anda.</p>
+            <h4 class="text-xl lg:text-2xl font-semibold mb-3">Hubungi kami sekarang dan dapatkan informasi lengkapnya
+            </h4>
+            <UButton icon="i-lucide-phone" size="xl" class="relative z-10 shadow-xl max-w-max">
+              Hubungi Kami
+            </UButton>
+          </div>
+
+          <img src="/images/mining.jpg" alt=""
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-tr from-black/80 to-primary/10 "></div>
         </div>
       </div>
     </div>
