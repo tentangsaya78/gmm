@@ -26,10 +26,16 @@
           </UInputMenu>
         </div>
 
-        <div class="lg:col-span-2 rounded-xl p-6 bg-primary/10 h-full flex items-center justify-center">
-          <UButton icon="i-lucide-phone" size="xl">
+        <div
+          class="lg:col-span-2 rounded-xl p-6 bg-primary/10 h-full flex flex-col items-center justify-center relative overflow-hidden min-h-[200px]">
+          <h4 class="text-xl lg:text-2xl font-semibold mb-3">Untuk informasi lebih lanjut</h4>
+          <UButton icon="i-lucide-phone" size="xl" class="relative z-10 shadow-xl">
             Hubungi Kami
           </UButton>
+          <UMarquee class="absolute inset-0 -z-10 opacity-10 rotate-[-15deg] scale-150 pointer-events-none"
+            :duration="500" reverse>
+            <img v-for="n in 8" :key="n" src="/images/pattern.svg" alt="" class="w-[300] h-auto opacity-75 mx-[-40px]">
+          </UMarquee>
         </div>
       </div>
     </div>
