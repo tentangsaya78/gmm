@@ -1,76 +1,63 @@
-<template>
-  <span class="inline-flex items-baseline overflow-hidden relative leading-tight">
-    <template v-for="(char, index) in characters" :key="index">
-      <span v-if="isDigit(char)" class="inline-block overflow-hidden relative" style="height: 1em;">
-        <Motion :initial="{ y: '0%' }" :animate="{ y: isVisible ? `-${parseInt(char) * 10}%` : '0%' }" :transition="{
-          duration: props.duration,
-          delay: props.delay + (index * 0.1),
-          ease: [0.45, 0.05, 0.55, 0.95]
-        }" class="flex flex-col">
-          <span v-for="n in 10" :key="n" class="inline-block h-[1em] leading-[1em]">
-            {{ n - 1 }}
-          </span>
-        </Motion>
-      </span>
-      <span v-else class="inline-block h-[1em] leading-[1em]">
-        {{ char }}
-      </span>
-    </template>
-
-    <!-- Dummy observer target -->
-    <span ref="target" class="absolute inset-0 pointer-events-none opacity-0"></span>
-  </span>
-</template>
-
-<script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
-import { Motion } from 'motion-v';
+<script setup lang="ts">
+import { animate, useMotionValue, useTransform, RowValue } from "motion-v"
+import { ref, onMounted, onUnmounted } from 'vue'
 
 interface Props {
-  targetValue: number;
-  duration?: number;
-  delay?: number;
-  decimals?: number;
+  targetValue: number
+  duration?: number
+  delay?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  duration: .5,
-  delay: 0,
-  decimals: 0,
-});
+  duration: 2,
+  delay: 0
+})
 
-const target = ref<HTMLElement | null>(null);
-const isVisible = ref(false);
+const count = useMotionValue(0)
 
-const characters = computed(() => {
-  return props.targetValue.toLocaleString('id-ID', {
-    minimumFractionDigits: props.decimals,
-    maximumFractionDigits: props.decimals,
-  }).split('');
-});
+// Format the motion value with Indonesian locale (dots as thousands separators)
+const formatted = useTransform(() => {
+  return Math.round(count.get()).toLocaleString('id-ID')
+})
 
-const isDigit = (char: string) => /^\d$/.test(char);
+const target = ref<HTMLElement | null>(null)
+const hasAnimated = ref(false)
+
+let controls: any
+
+const startAnimation = () => {
+  controls = animate(count, props.targetValue, {
+    duration: props.duration,
+    delay: props.delay,
+    ease: "easeOut"
+  })
+}
 
 onMounted(() => {
-  const targetEl = target.value;
-  if (!targetEl) return;
+  const targetEl = target.value
+  if (!targetEl) return
 
   const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      isVisible.value = true;
-      // We don't disconnect if we want it to re-animate or just leave it
-      // But for jackpot, once is usually enough
-      observer.disconnect();
+    if (entries[0].isIntersecting && !hasAnimated.value) {
+      hasAnimated.value = true
+      startAnimation()
+      observer.disconnect()
     }
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1 })
 
-  observer.observe(targetEl);
-});
+  observer.observe(targetEl)
+})
+
+onUnmounted(() => {
+  controls?.stop()
+})
 </script>
 
-<style scoped>
-/* Ensure the numeric spans take up full height of their container for alignment */
-.leading-tight {
-  line-height: 1.25;
-}
-</style>
+<template>
+  <span ref="target" class="inline-flex items-center">
+    <!-- RowValue will animate the characters of the formatted string -->
+    <RowValue :value="formatted" />
+  </span>
+</template>
+
+<style scoped></style>
