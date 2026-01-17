@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 min-h-[360px]">
         <div
           class="lg:col-span-4 rounded-xl p-6  h-full flex flex-col justify-end bg-[url(/images/map.jpg)] bg-cover bg-center text-white relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80"></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-linear-to-b from-transparent to-black/80"></div>
           <h2 class="text-2xl lg:text-4xl font-semibold mb-3 relative max-w-[500px]">Jaringan layanan kami tersebar di
             berbagai
             kota
@@ -39,7 +39,7 @@
 
           <img src="/images/mining.jpg" alt=""
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-          <div class="absolute inset-0 bg-gradient-to-tr from-black/80 to-primary/10 "></div>
+          <div class="absolute inset-0 bg-linear-to-tr from-black/80 to-primary/10 "></div>
         </div>
       </div>
     </div>
@@ -77,7 +77,8 @@
               </h5>
               <div v-if="selectedOffice.address" class="text-gray-800">
                 <p>{{ selectedOffice.address }}</p>
-                <UButton trailing-icon="mdi:map-marker" class="mt-2" size="xs"> Lihat Peta</UButton>
+                <UButton trailing-icon="mdi:map-marker" class="mt-2" size="xs" @click="scrollToMap"> Lihat Peta
+                </UButton>
               </div>
               <div v-else-if="selectedOffice.addresses" class="text-gray-800 space-y-1">
                 <p v-for="(addr, idx) in selectedOffice.addresses" :key="idx">{{ addr }}</p>
@@ -129,11 +130,17 @@
 </template>
 
 <script lang="ts" setup>
-const { offices } = useCabang();
-const selectedOffice = ref(null);
+const { offices, selectedOffice } = useCabang();
 
 function clearValue() {
   selectedOffice.value = null;
+}
+
+function scrollToMap() {
+  const mapElement = document.getElementById('map-section');
+  if (mapElement) {
+    mapElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Optional: Handle escape key to close modal
@@ -150,7 +157,4 @@ onMounted(() => {
     window.removeEventListener('keydown', handleEscape);
   });
 });
-
-
-
 </script>

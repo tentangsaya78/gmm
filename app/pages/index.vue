@@ -13,7 +13,6 @@
 import Sec3 from '~/components/sec3.vue';
 
 
-
 </script>
 
 <style></style>

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
 
 
-  modules: ['@nuxt/ui', 'motion-v/nuxt'],
+  modules: ['@nuxt/ui', 'motion-v/nuxt', '@nuxtjs/leaflet'],
 
   colorMode: {
     preference: 'light',
