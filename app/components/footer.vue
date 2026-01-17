@@ -98,7 +98,7 @@
       </div>
     </div>
     <div class="text-center py-3 border-t border-gray-200 mt-10 text-xs">
-      <p>© 2025 PT Gaya Makmur Mobil. All rights reserved.</p>
+      <p>© 2026 PT Gaya Makmur Mobil. All rights reserved.</p>
     </div>
   </div>
 </template>
