@@ -32,10 +32,18 @@
         <div>
           <h4 class="text-xl font-semibold">Produk</h4>
           <ul class=" mb-5">
-            <li>Truck</li>
-            <li>Mekanik</li>
-            <li>Service Center</li>
-            <li>GMM Teletech</li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Truck</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Mekanik</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Service Center</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">GMM Teletech</a>
+            </li>
           </ul>
 
           <p class="text-xs text-muted mt-5 mb-3">Penjualan Unit FAW & Spare Part <br> via E-Commerce Online</p>
@@ -57,18 +65,34 @@
         <div>
           <h4 class="text-xl font-semibold mb-2">Layanan</h4>
           <ul class="">
-            <li>Layanan Industri</li>
-            <li>Layanan Purna Jual</li>
-            <li>REMAN Center</li>
-            <li>GMM Teletech</li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Layanan Industri</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Layanan Purna Jual</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">REMAN Center</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">GMM Teletech</a>
+            </li>
           </ul>
 
           <h4 class="text-xl font-semibold mt-5">Informasi</h4>
           <ul class="">
-            <li>Tentang Kami</li>
-            <li>Karir</li>
-            <li>Hubungi Kami</li>
-            <li>News</li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Tentang Kami</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Karir</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">Hubungi Kami</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary transition-colors">News</a>
+            </li>
           </ul>
         </div>
       </div>
