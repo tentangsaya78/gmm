@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-40 pb-20 bg-primary text-white flex flex-col gap-10">
+  <div class="pt-40 pb-10 bg-primary text-white flex flex-col gap-10">
 
     <div class="flex flex-wrap justify-center gap-6 lg:gap-12 px-6 pb-10">
       <div v-for="(value, index) in stats" class="flex flex-col justify-center">
@@ -14,7 +14,7 @@
 
     </div>
 
-
+    <!-- 
     <UMarquee :pause-on-hover="true" :duration="100"
       :ui="{ root: 'before:from-primary after:from-primary [--duration:30s]', wrapper: 'border-0' }">
       <div v-for="product in products">
@@ -25,7 +25,7 @@
         </div>
 
       </div>
-    </UMarquee>
+    </UMarquee> -->
   </div>
 </template>
 
